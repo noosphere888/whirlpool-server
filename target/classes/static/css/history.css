@@ -1,0 +1,12 @@
+td.rawTx {
+    max-width: 300px;
+}
+td.mixId, td.txid, td.rawTx {
+    font-size: 0.8em;
+}
+.popover-body {
+    font-size:0.6em;
+}
+td.status {
+    width: 32em;
+}
