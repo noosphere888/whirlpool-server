@@ -2,7 +2,7 @@
 # WARNING: MAY NOT BE UP TO DATE
 
 # whirlpool-server
-https://github.com/noosphere888/Whirlpool) by Samourai-Wallet.
+Server for [Whirlpool](https://github.com/Samourai-Wallet/Whirlpool) by Samourai-Wallet.
 
 ## Installation
 See [README-install.md](README-install.md)
