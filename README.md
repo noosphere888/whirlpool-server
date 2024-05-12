@@ -1,7 +1,7 @@
-# WARNING: APPARTENLY THESE TEXT FILES ARE TOO DANGEROUS THAT THE U.S. FEDERAL GOVERNMENT HAD TO SEIZE THESE TEXT FILES
-# WARNING: MAY NOT BE UP TO DATE
+[![](https://jitpack.io/v/io.samourai.code.whirlpool/whirlpool-server.svg)](https://jitpack.io/#io.samourai.code.whirlpool/whirlpool-server)
 
 # whirlpool-server
+
 Server for [Whirlpool](https://github.com/Samourai-Wallet/Whirlpool) by Samourai-Wallet.
 
 ## Installation
@@ -121,6 +121,6 @@ When enabled, *server.fail-mode* triggers mixing failures.
 java -jar -Dspring.profiles.active=test target/whirlpool-server-develop-SNAPSHOT.jar --debug --spring.config.location=classpath:application.properties,/path/to/application-default.properties
 
 ## Resources
- * [whirlpool](https://github.com/noosphere888/Whirlpool)
- * [whirlpool-protocol](https://github.com/noosphere888/whirlpool-protocol)
- * [whirlpool-client](https://github.com/noosphere888/whirlpool-client)
+ * [whirlpool](https://github.com/Samourai-Wallet/Whirlpool)
+ * [whirlpool-protocol](https://github.com/Samourai-Wallet/whirlpool-protocol)
+ * [whirlpool-client](https://github.com/Samourai-Wallet/whirlpool-client)

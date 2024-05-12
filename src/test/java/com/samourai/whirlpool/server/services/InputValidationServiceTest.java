@@ -196,7 +196,7 @@ public class InputValidationServiceTest extends AbstractIntegrationTest {
   }
 
   @Test
-  public void checkInput_cascading_invalid0() throws Exception {
+  public void checkInput_cascading_invalid_1() throws Exception {
     // this fake cascading TX0 has multiple inputs
     /*
     Fake cascading TX0 (0.01btc): e4ff15906752db752c2b66b3180a541617ffa4c37f6e2049fe7d71d043e4555d
@@ -234,7 +234,7 @@ public class InputValidationServiceTest extends AbstractIntegrationTest {
   }
 
   @Test
-  public void checkInput_cascading_invalid1() throws Exception {
+  public void checkInput_cascading_invalid_2() throws Exception {
     // these fake cascading TX0s use CASCADING scode but input#0 is not a parent TX0.
     /*
     fa39e6d6d27d4d2fb40c0771b9937528acc6f7b80894e2ba42842fe7417d5e2c
@@ -305,12 +305,6 @@ public class InputValidationServiceTest extends AbstractIntegrationTest {
           "Input rejected (invalid cascading for tx0=024e83b1c9681831a79fa42f24d5ce415c0c03ec40f2134dd61e3af8b161a9e3)",
           e.getMessage());
     }
-  }
-
-
-  @Test
-  public void checkInput_tx0x2() throws Exception {
-    // TODO Need to mock tx0x2 txs on testnet
   }
 
   private boolean doCheckInput(String utxoHash, long utxoIndex, PoolFee poolFee)

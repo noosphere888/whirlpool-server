@@ -136,10 +136,9 @@ public class InputValidationService {
   }
 
   protected void validateTx0Cascading(Transaction tx, long txTime) throws Exception {
-    // cascading tx0 should only have 1 or 2 inputs (previous tx0 change or tx0x2 changes)
+    // cascading tx0 should only have 1 input (previous tx0 change)
     List<TransactionInput> txInputs = tx.getInputs();
-    int nbInputs = txInputs.size();
-    if (nbInputs != 1 && nbInputs != 2) {
+    if (txInputs.size() != 1) {
       throw new Exception("Invalid inputs.size for cascading tx0=" + tx.getHashAsString() + ")");
     }
 
@@ -148,19 +147,9 @@ public class InputValidationService {
 
     // get rpc tx of parent tx
     RpcTransaction parentRpcTx = blockchainDataService.getRpcTransaction(parentTxId).get();
-    int nbParentOutputs = parentRpcTx.getTx().getOutputs().size();
-    int FIRST_MUSTMIX_OUTPUT_INDEX = 3;
-    if (nbInputs == 1) {
-      // tx0
-      if (nbParentOutputs < (FIRST_MUSTMIX_OUTPUT_INDEX + 1)) {
-        throw new Exception("Invalid outputs.size for parentTx=" + parentTxId + ")");
-      }
-    } else {
-      // tx0x2
-      FIRST_MUSTMIX_OUTPUT_INDEX = 4;
-      if (nbParentOutputs < (FIRST_MUSTMIX_OUTPUT_INDEX + 1)) {
-        throw new Exception("Invalid outputs.size for parentTx=" + parentTxId + ")");
-      }
+    int FIRST_MUSTMIX_OUTPUT_INDEX = 3; // TODO assumes 4th output is utxo to be mixed
+    if (parentRpcTx.getTx().getOutputs().size() < (FIRST_MUSTMIX_OUTPUT_INDEX + 1)) {
+      throw new Exception("Invalid outputs.size for parentTx=" + parentTxId + ")");
     }
 
     // get pool of parent tx
